@@ -1,0 +1,23 @@
+{
+  "name": "gka-tpl-createjs",
+  "version": "0.0.1",
+  "description": "gka template createjs",
+  "main": "index.js",
+  "scripts": {
+  },
+  "homepage": "https://github.com/gkajs/gka-tpl-createjs",
+  "bugs": {
+    "url": "https://github.com/gkajs/gka-tpl-createjs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gkajs/gka-tpl-createjs.git"
+  },
+  "keywords": [
+    "gka",
+    "template",
+    "createjs"
+  ],
+  "author": "joeyguo",
+  "license": "MIT"
+}

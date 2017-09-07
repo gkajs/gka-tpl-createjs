@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,maximum-scale=1">
+    <title>gka-preview EaselJS: Simple SpriteSheet Example</title>
+</head>
+<body>
+<div>
+	<canvas id="gkaStage" width="165" height="292"></canvas>
+	<div style="position: fixed; bottom: 10px;">
+		Powered By <a target="_blank" href="https://github.com/gkajs/gka">gka</a> .
+		Template By <a target="_blank" href="https://github.com/gkajs/gka-tpl-createjs">gka-tpl-createjs</a>
+	</div>
+</div>
+<script src="./easeljs-NEXT.combined.js"></script>
+<script src="./data.js"></script>
+<script>
+	var stage = new createjs.Stage(document.getElementById("gkaStage"));
+
+    var spriteSheet = new createjs.SpriteSheet({
+            framerate: 25,
+            "images": ["img/sprites.png"],
+            "frames": data.frames,
+            "animations": {
+                default: [0, 63, "default"]
+            }
+        });
+
+    var grant = new createjs.Sprite(spriteSheet, "default");
+  
+    stage.addChild(grant);
+    createjs.Ticker.timingMode = createjs.Ticker.RAF;
+    createjs.Ticker.addEventListener("tick", stage);
+</script>
+</body>
+</html>
