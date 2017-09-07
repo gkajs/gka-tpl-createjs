@@ -13,9 +13,7 @@
 
 CreateJS [示例图片](https://github.com/CreateJS/EaselJS/blob/master/_assets/art/spritesheet_grant.png)压缩后 为 `105.3 KB`
 
-vs
-
-GKA [生成图片](https://github.com/gkajs/gka-tpl-createjs/tree/master/example/img/sprites.png)压缩后 大小为 `64.6 KB`[https://github.com/gkajs/gka-tpl-createjs/tree/master/example/img/sprites.png]
+GKA [生成图片](https://github.com/gkajs/gka-tpl-createjs/tree/master/example/img/sprites.png)压缩后 大小为 `64.6 KB`
 
 ### 内置优化
 
