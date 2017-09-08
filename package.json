@@ -1,7 +1,7 @@
 {
   "name": "gka-tpl-createjs",
-  "version": "0.0.1",
-  "description": "gka template createjs",
+  "version": "1.0.0",
+  "description": "gka template for createjs",
   "main": "index.js",
   "scripts": {
   },
