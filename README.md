@@ -9,6 +9,8 @@
 
 [在线示例](https://gkajs.github.io/gka-tpl-createjs/example/gka.html)  [示例代码](https://github.com/gkajs/gka-tpl-createjs/tree/master/example)
 
+相关文章：[使用 gka 加速 createjs 动画开发及图片优化](https://github.com/joeyguo/blog/issues/19)
+
 # 优化对比
 
 CreateJS [示例图片](https://github.com/CreateJS/EaselJS/blob/master/_assets/art/spritesheet_grant.png)压缩后 为 `105.3 KB`
