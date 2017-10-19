@@ -28,12 +28,16 @@ module.exports = function (data, opts, tool) {
     isSameSourceW && (data["sourceW"] = frames[0].sourceW);
     isSameSourceH && (data["sourceH"] = frames[0].sourceH);
     
+    data.file = data.file || data.frames[0].file;
     data.frames = frames.map(function(frame){
         var res = {
             "x": frame.x,
             "y": frame.y,
             "offX": frame.offX,
             "offY": frame.offY,
+            "file": frame.file,
+            "w": frame.w,
+            "h": frame.h
         };
 
         !isSameWidth && (res["width"] = frame.width);
@@ -45,9 +49,9 @@ module.exports = function (data, opts, tool) {
     });
 
     var data2 = {};
-    data2.file = data.file;
-    data2.w = data.w;
-    data2.h = data.h;
+    data2.file = data.file || data.frames[0].file;
+    data2.w = data.w || data.frames[0].w;
+    data2.h = data.h || data.frames[0].h;
     data2.sourceW = data.sourceW;
     data2.sourceH = data.sourceH;
 
@@ -63,8 +67,6 @@ module.exports = function (data, opts, tool) {
 
     tool.writeFile("data.js", `var data = ${JSON.stringify(data2, null, '    ').replace(/\"\[/ig, "\[").replace(/\]\"/ig, "\]")}`);
     tool.writeFile("gka.html", html(data, prefix, frameduration));
-console.log(__dirname)
-console.log(__filename)
     tool.writeFile("easeljs-NEXT.combined.js", fs.readFileSync(path.join(__dirname, 'lib/easeljs-NEXT.combined.js'), 'utf8'));
 };
 
