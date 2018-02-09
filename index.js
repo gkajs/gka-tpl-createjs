@@ -1,27 +1,42 @@
-var fs = require('fs');
-var path = require('path');
+var gkaUtils = require('gka-utils'),
+    writeSync = gkaUtils.file.writeSync;
 var html = require("./lib/html");
 
-module.exports = function (data, opts, tool) {
-    var prefix = opts.prefix,
-        frameduration = opts.frameduration;
-
-    var frames = data.frames,
-        frame = frames[0];
+module.exports = function (data, opts, cb) {
     
-    var _data = {};
-    _data.file = frame.file;
-    _data.w = frame.w;
-    _data.h = frame.h;
-    _data.sourceW = frame.sourceW;
-    _data.sourceH = frame.sourceH;
+    var dir = opts.imageDir;
 
-    _data.frames = frames.map(function(frame){
-        return JSON.stringify([frame.x, frame.y, frame.width, frame.height, 0, (0-frame.offX), (0-frame.offY)])
-    });
+    function run(data, opts, key) {
+        var name = (key? key + '-' : '') + 'gka',
+            dataName = name + '-data.js',
+            htmlName = name + '.html';
 
-    tool.writeFile("data.js", `var data = ${JSON.stringify(_data, null, '    ').replace(/\"\[/ig, "\[").replace(/\]\"/ig, "\]")}`);
-    tool.writeFile("gka.html", html(_data, prefix, frameduration));
-    tool.writeFile("easeljs-NEXT.combined.js", fs.readFileSync(path.join(__dirname, 'lib/easeljs-NEXT.combined.js'), 'utf8'));
-};
+        var prefix = opts.prefix,
+            frameduration = opts.frameduration;
 
+        var frames = data.frames,
+            frame = frames[0];
+        
+        var _data = {};
+            _data.file = frame.file;
+            _data.w = frame.w;
+            _data.h = frame.h;
+            _data.sourceW = frame.sourceW;
+            _data.sourceH = frame.sourceH;
+
+        _data.frames = frames.map(function(frame){
+            return JSON.stringify([frame.x, frame.y, frame.width, frame.height, 0, (0-frame.offX), (0-frame.offY)])
+        });
+
+        writeSync([dir, '..', dataName],  `var data = ${gkaUtils.data.fixArrayString(JSON.stringify(_data, null, '    '))}`);
+        writeSync([dir, '..', htmlName], html(data, opts, dataName));
+        writeSync([dir, '..', "easeljs-NEXT.combined.js"], gkaUtils.file.readFileSync([__dirname, 'lib/easeljs-NEXT.combined.js']));
+    }
+
+    run(data, opts);
+
+    // 对每个子目录都进行处理
+    gkaUtils._.effectSubFolderSync(run, data, opts);
+
+    cb && cb();
+}

@@ -17,7 +17,8 @@
 <script src="./easeljs-NEXT.combined.js"></script>
 <script src="./data.js"></script>
 <script>
-	var stage = new createjs.Stage(document.getElementById("gkaStage"));
+
+    var stage = new createjs.Stage(document.getElementById("gkaStage"));
 
     var spriteSheet = new createjs.SpriteSheet({
             framerate: 25,
@@ -33,6 +34,7 @@
     stage.addChild(grant);
     createjs.Ticker.timingMode = createjs.Ticker.RAF;
     createjs.Ticker.addEventListener("tick", stage);
+
 </script>
 </body>
 </html>
