@@ -1,24 +1,17 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,maximum-scale=1">
-    <title>gka-preview EaselJS: Simple SpriteSheet Example</title>
+    <script name='gkaRibbon'>document.addEventListener('DOMContentLoaded',function(){var d=document.createElement('div');d.innerHTML='<div style="position: fixed; bottom: 10px;">Powered By <a target="_blank" href="https://github.com/gkajs/gka">gka 2.6.0</a></div>';document.body.appendChild(d)});</script>
+    <title>gka-preview</title>
 </head>
 <body>
-<div>
-	<canvas id="gkaStage" width="400" height="300"></canvas>
-	<div style="position: fixed; bottom: 10px;">
-		Powered By <a target="_blank" href="https://github.com/gkajs/gka">gka</a> .
-		Template By <a target="_blank" href="https://github.com/gkajs/gka-tpl-createjs">gka-tpl-createjs</a> 1.1.2
-	</div>
-</div>
-<script src="./easeljs-NEXT.combined.js"></script>
-<script src="./data.js"></script>
-<script>
 
-    var stage = new createjs.Stage(document.getElementById("gkaStage"));
+    <canvas id="gka" width="400" height="300"></canvas>
+    <script src="./easeljs-NEXT.combined.js"></script>
+    <script src="./gka-data.js"></script>
+    <script>
+    var stage = new createjs.Stage(document.getElementById("gka"));
 
     var spriteSheet = new createjs.SpriteSheet({
             framerate: 25,
@@ -34,7 +27,6 @@
     stage.addChild(grant);
     createjs.Ticker.timingMode = createjs.Ticker.RAF;
     createjs.Ticker.addEventListener("tick", stage);
-
-</script>
+    </script>
 </body>
 </html>
