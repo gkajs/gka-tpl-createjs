@@ -7,8 +7,11 @@
 
 [gka](https://github.com/joeyguo/gka) 文件生成模板，一键式生成 createjs 合图及需要的数据，并内置优化。
 
-- [示例预览](https://gkajs.github.io/gka-tpl-createjs/example/gka.html)
-- [示例代码](https://github.com/gkajs/gka-tpl-createjs/tree/master/example)
+- 输出 createjs 精灵图动画文件
+- 结合 -uc 支持 `相同帧图片复用`✓ `空白裁剪优化`✓ (可选) 
+- 默认开启 `开启合图优化`✓
+
+[示例预览](https://gkajs.github.io/gka-tpl-createjs/example/gka.html)、 [示例代码](https://github.com/gkajs/gka-tpl-createjs/tree/master/example)
 
 相关文章：[使用 gka 加速 createjs 动画开发及图片优化](https://github.com/joeyguo/blog/issues/19)
 
@@ -17,12 +20,6 @@
 CreateJS [示例图片](https://github.com/CreateJS/EaselJS/blob/master/_assets/art/spritesheet_grant.png)压缩后 为 `105.3 KB`
 
 GKA [生成图片](https://github.com/gkajs/gka-tpl-createjs/tree/master/example/img/sprites.png)压缩后 大小为 `64.6 KB`
-
-### 内置优化
-
-- 输出 createjs 精灵图动画文件
-- 结合 -uc 支持 `相同帧图片复用`✓ `空白裁剪优化`✓ (可选) 
-- 默认开启 `开启合图优化`✓
 
 # Install
 
