@@ -7,7 +7,8 @@
 
 [gka](https://github.com/joeyguo/gka) 文件生成模板，一键式生成 createjs 合图及需要的数据，并内置优化。
 
-[在线示例](https://gkajs.github.io/gka-tpl-createjs/example/gka.html)  [示例代码](https://github.com/gkajs/gka-tpl-createjs/tree/master/example)
+- [示例预览](https://gkajs.github.io/gka-tpl-createjs/example/gka.html)
+- [示例代码](https://github.com/gkajs/gka-tpl-createjs/tree/master/example)
 
 相关文章：[使用 gka 加速 createjs 动画开发及图片优化](https://github.com/joeyguo/blog/issues/19)
 
@@ -19,16 +20,16 @@ GKA [生成图片](https://github.com/gkajs/gka-tpl-createjs/tree/master/example
 
 ### 内置优化
 
-- 开启相同帧图片复用 ✓
-- 开启空白裁剪优化 ✓
-- 开启合图优化 ✓
+- 输出 createjs 精灵图动画文件
+- 结合 -uc 支持 `相同帧图片复用`✓ `空白裁剪优化`✓ (可选) 
+- 默认开启 `开启合图优化`✓
 
 # Install
 
 ```sh
 $ npm i gka -g               # install gka
 
-$ npm i gka-tpl-createjs -g  # install gka-tpl-createjs
+（已内置）$ npm i gka-tpl-createjs -g  # install gka-tpl-createjs
 ```
 
 # Usage
